@@ -127,13 +127,24 @@ extension Login {
     @objc func handleSignIn() {
         guard let email = emailTextField.text,
             let password = passwordTextField.text else { return }
-        loginService.login(withEmail: email, and: password) { error in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-        }
+        signUserIn(with: email, and: password)
     }
 
+}
+
+//MARK: - API
+
+extension Login {
+    fileprivate func signUserIn(with email : String, and password : String) {
+        loginService.login(withEmail: email, and: password) { [weak self] error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+//            self?.dismiss(animated: true, completion: nil)
+            self?.navigationController?.popViewController(animated: true)
+        }
+    }
 }
 
 

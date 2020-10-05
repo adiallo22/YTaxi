@@ -8,15 +8,16 @@
 
 import UIKit
 import Firebase
+import MapKit
 
 class Home : UIViewController {
+    
+    private var mapView = MKMapView()
     
     private let log = LoginService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .backgroundColor()
-        signout()
         checkUserLogStatus()
     }
     
@@ -25,6 +26,12 @@ class Home : UIViewController {
 //MARK: - configurations and helpers
 
 extension Home {
+    
+    fileprivate func configureUI() {
+        navigationController?.navigationBar.isHidden = true
+        view.addSubview(mapView)
+        mapView.frame = view.frame
+    }
     
     fileprivate func presentLoginScreen() {
         navigationController?.pushViewController(Login(), animated: true)
@@ -35,6 +42,7 @@ extension Home {
             presentLoginScreen()
             return
         }
+        configureUI()
     }
     
 }

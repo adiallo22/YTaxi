@@ -156,6 +156,7 @@ extension Signup {
                                               email: email,
                                               userType: profileOption.selectedSegmentIndex)
         signup(with: credentials, and: password)
+        navigationController?.popToRootViewController(animated: true)
     }
     
 }
