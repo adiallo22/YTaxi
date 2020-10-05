@@ -11,17 +11,18 @@ import Firebase
 
 //MARK: - protocols
 
-protocol AuthenticationDelegate {
+protocol LoginDelegate {
     func login(withEmail email : String, and password : String,
                completion : @escaping(Error?) -> Void)
 }
 
+protocol SignupDelegate {
+    func signup(withCredentials credentials : UserCredential, completion : @escaping(Error?)->Void)
+}
+
 //MARK: - Login
 
-struct AuthenticationService : AuthenticationDelegate {
-    
-    private init() { }
-    
+struct LoginService : LoginDelegate {
     func login(withEmail email: String, and password: String, completion: @escaping (Error?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { auth, error in
             if let error = error {
@@ -29,7 +30,12 @@ struct AuthenticationService : AuthenticationDelegate {
             }
         }
     }
-    
 }
 
 //MARK: - signup
+
+struct SignupService : SignupDelegate {
+    func signup(withCredentials credentials : UserCredential, completion : @escaping(Error?)->Void) {
+        <#code#>
+    }
+}
