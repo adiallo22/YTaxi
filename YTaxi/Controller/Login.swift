@@ -11,7 +11,7 @@ import SnapKit
 
 class Login : UIViewController {
     
-    private let authenticationService = AuthenticationService()
+    private let loginService = LoginService()
     
     private var titleLabel : UILabel = {
         let label = UILabel()
@@ -127,7 +127,7 @@ extension Login {
     @objc func handleSignIn() {
         guard let email = emailTextField.text,
             let password = passwordTextField.text else { return }
-        authenticationService.login(withEmail: email, and: password) { error in
+        loginService.login(withEmail: email, and: password) { error in
             if let error = error {
                 print(error.localizedDescription)
             }
