@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>642521419992-cc4bsj7r131gbo9c0nsfi5q65ln2e9f0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.642521419992-cc4bsj7r131gbo9c0nsfi5q65ln2e9f0</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDDZ9eQX05hk0sFDSGkkswh_MCLAZYgrLM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>642521419992</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.abdulCo.YTaxi</string>
+	<key>PROJECT_ID</key>
+	<string>heytaxi-ce6e1</string>
+	<key>STORAGE_BUCKET</key>
+	<string>heytaxi-ce6e1.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:642521419992:ios:194df69ba34be4bc8c47ad</string>
+	<key>DATABASE_URL</key>
+	<string>https://heytaxi-ce6e1.firebaseio.com</string>
+</dict>
+</plist>
