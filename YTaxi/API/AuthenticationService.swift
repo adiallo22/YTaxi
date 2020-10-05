@@ -15,6 +15,7 @@ import FirebaseDatabase
 protocol LoginDelegate {
     func login(withEmail email : String, and password : String,
                completion : @escaping(Error?) -> Void)
+    func logout(completion : @escaping (Error?) -> Void)
 }
 
 protocol SignupDelegate {
@@ -24,6 +25,15 @@ protocol SignupDelegate {
 //MARK: - Login
 
 struct LoginService : LoginDelegate {
+    
+    func logout(completion : @escaping (Error?) -> Void) {
+        do {
+            try Auth.auth().signOut()
+        } catch let error {
+            completion(error)
+        }
+    }
+    
     func login(withEmail email: String, and password: String, completion: @escaping (Error?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { auth, error in
             if let error = error {

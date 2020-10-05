@@ -155,12 +155,20 @@ extension Signup {
         let credentials = UserCredential.init(fullname: fullname,
                                               email: email,
                                               userType: profileOption.selectedSegmentIndex)
+        signup(with: credentials, and: password)
+    }
+    
+}
+
+//MARK: - API
+
+extension Signup {
+    fileprivate func signup(with credentials : UserCredential, and password : String) {
         signupService.signup(withCredentials: credentials, and: password) { error in
             if let error = error {
                 print(error.localizedDescription)
             }
         }
     }
-    
 }
 
