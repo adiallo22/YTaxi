@@ -26,12 +26,15 @@ class Home : UIViewController {
 
 extension Home {
     
+    fileprivate func presentLoginScreen() {
+        navigationController?.pushViewController(Login(), animated: true)
+    }
+    
     fileprivate func checkUserLogStatus() {
         guard Auth.auth().currentUser?.uid != nil else {
-            print("a user is not logged in ")
+            presentLoginScreen()
             return
         }
-        print("a user IS logged in")
     }
     
 }
