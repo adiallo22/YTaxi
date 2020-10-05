@@ -12,6 +12,8 @@ class Signup : UIViewController {
     
     //MARK: - properties
     
+    private let signupService = SignupService()
+    
     private var titleLabel : UILabel = {
         let label = UILabel()
         label.font = UIFont.init(name: "Avenir-Light", size: 30)
@@ -147,7 +149,17 @@ extension Signup {
     }
     
     @objc func handleSignUp() {
-        print("a user is signed up ..")
+        guard let email = emailTextField.text,
+            let password = passwordTextField.text,
+            let fullname = fullnameTextField.text else { return }
+        let credentials = UserCredential.init(fullname: fullname,
+                                              email: email,
+                                              userType: profileOption.selectedSegmentIndex)
+        signupService.signup(withCredentials: credentials, and: password) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
     }
     
 }

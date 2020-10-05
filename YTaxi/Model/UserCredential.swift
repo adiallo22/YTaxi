@@ -14,11 +14,11 @@ struct UserCredential {
     var email : String
     var userType : Int
     
-    init(value : [String: Any]) {
-        self.fullname = value["fullname"] as? String ?? ""
-        self.email = value["email"] as? String ?? ""
-        self.userType = value["userType"] as? Int ?? 0
-    }
+//    init(value : [String: Any]) {
+//        self.fullname = value["fullname"] as? String ?? ""
+//        self.email = value["email"] as? String ?? ""
+//        self.userType = value["userType"] as? Int ?? 0
+//    }
     
     init(fullname: String, email: String, userType: Int) {
         self.fullname = fullname
