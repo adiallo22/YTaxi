@@ -23,7 +23,7 @@ class SignupServiceMock {
 
 extension SignupServiceMock : SignupDelegate {
     
-    func signup(withCredentials credentials: UserCredential, and password: String, completion: @escaping (Error?) -> Void) {
+    func signup(withCredentials credentials: UserCredential, and password: String, completion: @escaping(Error?) -> Void) {
         signupCalled = true
         if shouldReturnError {
             completion(SignupError.signupError)

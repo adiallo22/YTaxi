@@ -19,6 +19,12 @@ class LoginServiceMock {
         self.shouldReturnError = shouldReturnError
     }
     
+    func reset() {
+        shouldReturnError = false
+        loginCalled = false
+        logoutCalled = false
+    }
+    
 }
 
 //MARK: - <#section heading#>

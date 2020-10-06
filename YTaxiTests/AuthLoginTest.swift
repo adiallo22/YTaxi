@@ -14,47 +14,74 @@ class AuthLoginTest : QuickSpec {
     
     override func spec() {
         describe("To firebase")  {
-            var loginService : LoginServiceMock!
+            var loginServiceMock : LoginServiceMock!
+            var loginService : LoginService!
             let email = "johndoe@gmail.com"
             let password = "123456"
+            let fakeEmail = "1@1.com"
+            
             beforeEach {
-                loginService = LoginServiceMock(false)
+                loginServiceMock = LoginServiceMock(false)
+                loginService = LoginService()
             }
             afterEach {
+                loginServiceMock = nil
                 loginService = nil
             }
             
             describe("when the server is running properly") {
                 context("given the loggin & logout function") {
-                    it("should not return any error") {
-                        loginService.login(withEmail: email, and: password) { error in
+                    it("should NOT return any error") {
+                        loginServiceMock.login(withEmail: "", and: "") { error in
                             expect(error).to(beNil())
+                            expect(loginServiceMock.loginCalled).to(beTrue())
                         }
                     }
-                    it("should not return any error") {
-                        loginService.logout { error in
+                    it("should NOT return any error") {
+                        loginServiceMock.logout { error in
                             expect(error).to(beNil())
+                            expect(loginServiceMock.logoutCalled).to(beTrue())
                         }
                     }
                 }
             }
             
-            describe("when server is not running") {
+            describe("when server is NOT running") {
                 context("given the loggin & logout function") {
                     it("should return loggin error") {
-                        loginService.shouldReturnError = true
-                        loginService.login(withEmail: email, and: password) { error in
+                        loginServiceMock.shouldReturnError = true
+                        loginServiceMock.login(withEmail: email, and: password) { error in
                             expect(error?.localizedDescription).toNot(beNil())
+                            expect(loginServiceMock.loginCalled).to(beTrue())
                         }
                     }
                     it("should return logout error") {
-                        loginService.shouldReturnError = true
-                        loginService.logout { error in
+                        loginServiceMock.shouldReturnError = true
+                        loginServiceMock.logout { error in
                             expect(error?.localizedDescription).toNot(beNil())
+                            expect(loginServiceMock.logoutCalled).to(beTrue())
                         }
                     }
                 }
             }
+            
+            describe("") {
+                context("when login with real authentication data") {
+                    it("should log user in and not return any error") {
+                        loginService.login(withEmail: email, and: password) { error in
+                            expect(error).to(beNil())
+                        }
+                    }
+                }
+                context("when loggin with fake authentication data") {
+                    it("should NOT log user in and should return wrong credentials type error") {
+                        loginService.login(withEmail: fakeEmail, and: password) { error in
+                            expect(error).toNot(beNil())
+                        }
+                    }
+                }
+            }
+            
         }
     }
     

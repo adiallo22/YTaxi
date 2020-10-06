@@ -18,7 +18,7 @@ class Home : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        signout()
+        signout()
         checkUserLogStatus()
     }
     
