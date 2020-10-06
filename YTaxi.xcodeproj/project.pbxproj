@@ -206,9 +206,9 @@
 			isa = PBXGroup;
 			children = (
 				C08EB199252CA64E0045A07A /* Mocks */,
-				C08EB190252C9C920045A07A /* Info.plist */,
 				C08EB197252CA5000045A07A /* AuthLoginTest.swift */,
 				C08EB196252CA5000045A07A /* YTaxiTests-Bridging-Header.h */,
+				C08EB190252C9C920045A07A /* Info.plist */,
 			);
 			path = YTaxiTests;
 			sourceTree = "<group>";
