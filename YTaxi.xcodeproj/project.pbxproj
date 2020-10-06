@@ -25,6 +25,7 @@
 		C08EB187252BADFF0045A07A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB186252BADFF0045A07A /* Home.swift */; };
 		C08EB198252CA5000045A07A /* AuthLoginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB197252CA5000045A07A /* AuthLoginTest.swift */; };
 		C08EB19B252CA7440045A07A /* LoginServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB19A252CA7440045A07A /* LoginServiceMock.swift */; };
+		C08EB19D252CAC2B0045A07A /* SignupServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB19C252CAC2B0045A07A /* SignupServiceMock.swift */; };
 		EF48A969AC62BD5CBA2FAA6B /* Pods_YTaxi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5231D0B9C655BC6375DAAF1 /* Pods_YTaxi.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		C08EB196252CA5000045A07A /* YTaxiTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YTaxiTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		C08EB197252CA5000045A07A /* AuthLoginTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLoginTest.swift; sourceTree = "<group>"; };
 		C08EB19A252CA7440045A07A /* LoginServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceMock.swift; sourceTree = "<group>"; };
+		C08EB19C252CAC2B0045A07A /* SignupServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupServiceMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				C08EB19A252CA7440045A07A /* LoginServiceMock.swift */,
+				C08EB19C252CAC2B0045A07A /* SignupServiceMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C08EB19D252CAC2B0045A07A /* SignupServiceMock.swift in Sources */,
 				C08EB198252CA5000045A07A /* AuthLoginTest.swift in Sources */,
 				C08EB19B252CA7440045A07A /* LoginServiceMock.swift in Sources */,
 			);
