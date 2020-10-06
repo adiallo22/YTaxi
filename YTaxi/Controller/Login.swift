@@ -11,6 +11,8 @@ import SnapKit
 
 class Login : UIViewController {
     
+    private let loginService = LoginService()
+    
     private var titleLabel : UILabel = {
         let label = UILabel()
         label.font = UIFont.init(name: "Avenir-Light", size: 30)
@@ -20,11 +22,13 @@ class Login : UIViewController {
     }()
     
     private var emailTextField : UITextField = {
-        return UITextField().textField(withPlaceholder: "Email", isSecuredEntry: false)
+        let tf = UITextField().textField(withPlaceholder: "Email", isSecuredEntry: false)
+        return tf
     }()
     
     private var passwordTextField : UITextField = {
-        return UITextField().textField(withPlaceholder: "Password", isSecuredEntry: true)
+        let tf = UITextField().textField(withPlaceholder: "Password", isSecuredEntry: true)
+        return tf
     }()
     
     private lazy var emailContainerView : UIView = {
@@ -121,9 +125,27 @@ extension Login {
     }
     
     @objc func handleSignIn() {
-        print("A user is now signed in ..")
+        guard let email = emailTextField.text,
+            let password = passwordTextField.text else { return }
+        signUserIn(with: email, and: password)
     }
-    
+
+}
+
+//MARK: - API
+
+extension Login {
+    fileprivate func signUserIn(with email : String, and password : String) {
+        loginService.login(withEmail: email, and: password) { [weak self] error in
+            if error == nil {
+                self?.navigationController?.popViewController(animated: true)
+                guard let home = UIApplication.shared.windows.first?.rootViewController as? Home else { return }
+                home.checkUserLogStatus()
+            } else {
+                print(error?.localizedDescription ?? "")
+            }
+        }
+    }
 }
 
 

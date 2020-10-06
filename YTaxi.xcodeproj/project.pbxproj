@@ -18,6 +18,10 @@
 		C08EB17C252B53350045A07A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB178252B53350045A07A /* UIColor.swift */; };
 		C08EB17D252B53350045A07A /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB179252B53350045A07A /* UIView.swift */; };
 		C08EB17F252B5B940045A07A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C08EB17E252B5B940045A07A /* GoogleService-Info.plist */; };
+		C08EB181252B77600045A07A /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB180252B77600045A07A /* AuthenticationService.swift */; };
+		C08EB183252B7AB10045A07A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB182252B7AB10045A07A /* LoginViewModel.swift */; };
+		C08EB185252B81080045A07A /* UserCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB184252B81080045A07A /* UserCredential.swift */; };
+		C08EB187252BADFF0045A07A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB186252BADFF0045A07A /* Home.swift */; };
 		EF48A969AC62BD5CBA2FAA6B /* Pods_YTaxi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5231D0B9C655BC6375DAAF1 /* Pods_YTaxi.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +42,10 @@
 		C08EB178252B53350045A07A /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		C08EB179252B53350045A07A /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		C08EB17E252B5B940045A07A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C08EB180252B77600045A07A /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		C08EB182252B7AB10045A07A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C08EB184252B81080045A07A /* UserCredential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredential.swift; sourceTree = "<group>"; };
+		C08EB186252BADFF0045A07A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,7 @@
 		C08EB16D252B510E0045A07A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				C08EB180252B77600045A07A /* AuthenticationService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -129,6 +138,7 @@
 			children = (
 				C08EB172252B51A00045A07A /* Login.swift */,
 				C08EB174252B52F10045A07A /* Signup.swift */,
+				C08EB186252BADFF0045A07A /* Home.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -136,6 +146,7 @@
 		C08EB16F252B51110045A07A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C08EB182252B7AB10045A07A /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -150,6 +161,7 @@
 		C08EB171252B51130045A07A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C08EB184252B81080045A07A /* UserCredential.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -272,10 +284,14 @@
 				C08EB17D252B53350045A07A /* UIView.swift in Sources */,
 				C08EB17A252B53350045A07A /* UIButton.swift in Sources */,
 				C08EB17C252B53350045A07A /* UIColor.swift in Sources */,
+				C08EB181252B77600045A07A /* AuthenticationService.swift in Sources */,
 				C08EB173252B51A00045A07A /* Login.swift in Sources */,
 				C08EB175252B52F10045A07A /* Signup.swift in Sources */,
 				C08EB159252B49730045A07A /* AppDelegate.swift in Sources */,
 				C08EB15B252B49730045A07A /* SceneDelegate.swift in Sources */,
+				C08EB185252B81080045A07A /* UserCredential.swift in Sources */,
+				C08EB183252B7AB10045A07A /* LoginViewModel.swift in Sources */,
+				C08EB187252BADFF0045A07A /* Home.swift in Sources */,
 				C08EB17B252B53350045A07A /* UITextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
