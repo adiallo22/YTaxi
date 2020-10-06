@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		144FC15019920ED8901C3DE3 /* Pods_YTaxiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AA190F0B28943404186BED /* Pods_YTaxiTests.framework */; };
 		C08EB159252B49730045A07A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB158252B49730045A07A /* AppDelegate.swift */; };
 		C08EB15B252B49730045A07A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB15A252B49730045A07A /* SceneDelegate.swift */; };
 		C08EB162252B49760045A07A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08EB161252B49760045A07A /* Assets.xcassets */; };
@@ -22,7 +23,8 @@
 		C08EB183252B7AB10045A07A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB182252B7AB10045A07A /* LoginViewModel.swift */; };
 		C08EB185252B81080045A07A /* UserCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB184252B81080045A07A /* UserCredential.swift */; };
 		C08EB187252BADFF0045A07A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB186252BADFF0045A07A /* Home.swift */; };
-		C08EB18F252C9C920045A07A /* YTaxiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB18E252C9C920045A07A /* YTaxiTests.swift */; };
+		C08EB198252CA5000045A07A /* AuthLoginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB197252CA5000045A07A /* AuthLoginTest.swift */; };
+		C08EB19B252CA7440045A07A /* LoginServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB19A252CA7440045A07A /* LoginServiceMock.swift */; };
 		EF48A969AC62BD5CBA2FAA6B /* Pods_YTaxi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5231D0B9C655BC6375DAAF1 /* Pods_YTaxi.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24AA190F0B28943404186BED /* Pods_YTaxiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTaxiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D32AF4D5CCF1B6FE3B239D5 /* Pods-YTaxi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTaxi.debug.xcconfig"; path = "Target Support Files/Pods-YTaxi/Pods-YTaxi.debug.xcconfig"; sourceTree = "<group>"; };
+		4FEF1419373F6930CF2B5052 /* Pods-YTaxiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTaxiTests.release.xcconfig"; path = "Target Support Files/Pods-YTaxiTests/Pods-YTaxiTests.release.xcconfig"; sourceTree = "<group>"; };
 		6620A1919840E315BA998258 /* Pods-YTaxi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTaxi.release.xcconfig"; path = "Target Support Files/Pods-YTaxi/Pods-YTaxi.release.xcconfig"; sourceTree = "<group>"; };
+		A6AE3C43A4C07A7EADC7D559 /* Pods-YTaxiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTaxiTests.debug.xcconfig"; path = "Target Support Files/Pods-YTaxiTests/Pods-YTaxiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B5231D0B9C655BC6375DAAF1 /* Pods_YTaxi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTaxi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08EB155252B49730045A07A /* YTaxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YTaxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08EB158252B49730045A07A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,8 +63,10 @@
 		C08EB184252B81080045A07A /* UserCredential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredential.swift; sourceTree = "<group>"; };
 		C08EB186252BADFF0045A07A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		C08EB18C252C9C920045A07A /* YTaxiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YTaxiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C08EB18E252C9C920045A07A /* YTaxiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTaxiTests.swift; sourceTree = "<group>"; };
 		C08EB190252C9C920045A07A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C08EB196252CA5000045A07A /* YTaxiTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YTaxiTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		C08EB197252CA5000045A07A /* AuthLoginTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLoginTest.swift; sourceTree = "<group>"; };
+		C08EB19A252CA7440045A07A /* LoginServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				144FC15019920ED8901C3DE3 /* Pods_YTaxiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				B5231D0B9C655BC6375DAAF1 /* Pods_YTaxi.framework */,
+				24AA190F0B28943404186BED /* Pods_YTaxiTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -94,6 +103,8 @@
 			children = (
 				3D32AF4D5CCF1B6FE3B239D5 /* Pods-YTaxi.debug.xcconfig */,
 				6620A1919840E315BA998258 /* Pods-YTaxi.release.xcconfig */,
+				A6AE3C43A4C07A7EADC7D559 /* Pods-YTaxiTests.debug.xcconfig */,
+				4FEF1419373F6930CF2B5052 /* Pods-YTaxiTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -192,10 +203,20 @@
 		C08EB18D252C9C920045A07A /* YTaxiTests */ = {
 			isa = PBXGroup;
 			children = (
-				C08EB18E252C9C920045A07A /* YTaxiTests.swift */,
+				C08EB199252CA64E0045A07A /* Mocks */,
 				C08EB190252C9C920045A07A /* Info.plist */,
+				C08EB197252CA5000045A07A /* AuthLoginTest.swift */,
+				C08EB196252CA5000045A07A /* YTaxiTests-Bridging-Header.h */,
 			);
 			path = YTaxiTests;
+			sourceTree = "<group>";
+		};
+		C08EB199252CA64E0045A07A /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C08EB19A252CA7440045A07A /* LoginServiceMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,9 +245,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C08EB195252C9C920045A07A /* Build configuration list for PBXNativeTarget "YTaxiTests" */;
 			buildPhases = (
+				5E80FA698E87C50481EFBEB8 /* [CP] Check Pods Manifest.lock */,
 				C08EB188252C9C920045A07A /* Sources */,
 				C08EB189252C9C920045A07A /* Frameworks */,
 				C08EB18A252C9C920045A07A /* Resources */,
+				A3B51D3BD9207E27E58EF0CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +276,7 @@
 					};
 					C08EB18B252C9C920045A07A = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 						TestTargetID = C08EB154252B49730045A07A;
 					};
 				};
@@ -336,6 +360,45 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YTaxi/Pods-YTaxi-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5E80FA698E87C50481EFBEB8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YTaxiTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3B51D3BD9207E27E58EF0CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YTaxiTests/Pods-YTaxiTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YTaxiTests/Pods-YTaxiTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YTaxiTests/Pods-YTaxiTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -362,7 +425,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C08EB18F252C9C920045A07A /* YTaxiTests.swift in Sources */,
+				C08EB198252CA5000045A07A /* AuthLoginTest.swift in Sources */,
+				C08EB19B252CA7440045A07A /* LoginServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,8 +606,10 @@
 		};
 		C08EB193252C9C920045A07A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6AE3C43A4C07A7EADC7D559 /* Pods-YTaxiTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZNY957A2G6;
 				INFOPLIST_FILE = YTaxiTests/Info.plist;
@@ -554,6 +620,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.abdulCo.YTaxiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "YTaxiTests/YTaxiTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YTaxi.app/YTaxi";
@@ -562,8 +630,10 @@
 		};
 		C08EB194252C9C920045A07A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FEF1419373F6930CF2B5052 /* Pods-YTaxiTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZNY957A2G6;
 				INFOPLIST_FILE = YTaxiTests/Info.plist;
@@ -574,6 +644,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.abdulCo.YTaxiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "YTaxiTests/YTaxiTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YTaxi.app/YTaxi";

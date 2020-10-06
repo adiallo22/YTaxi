@@ -6,8 +6,23 @@
 	<dict>
 		<key>YTaxi.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>15</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>C08EB154252B49730045A07A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C08EB18B252C9C920045A07A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
