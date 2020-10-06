@@ -10,5 +10,7 @@ target 'YTaxi' do
 	pod 'SnapKit', '~> 5.0.0'
 	pod 'Firebase/Auth'
 	pod 'Firebase/Database'
+	pod 'Quick'
+	pod 'Nimble'
 
 end

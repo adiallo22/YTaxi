@@ -22,8 +22,19 @@
 		C08EB183252B7AB10045A07A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB182252B7AB10045A07A /* LoginViewModel.swift */; };
 		C08EB185252B81080045A07A /* UserCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB184252B81080045A07A /* UserCredential.swift */; };
 		C08EB187252BADFF0045A07A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB186252BADFF0045A07A /* Home.swift */; };
+		C08EB18F252C9C920045A07A /* YTaxiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB18E252C9C920045A07A /* YTaxiTests.swift */; };
 		EF48A969AC62BD5CBA2FAA6B /* Pods_YTaxi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5231D0B9C655BC6375DAAF1 /* Pods_YTaxi.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C08EB191252C9C920045A07A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C08EB14D252B49730045A07A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C08EB154252B49730045A07A;
+			remoteInfo = YTaxi;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3D32AF4D5CCF1B6FE3B239D5 /* Pods-YTaxi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTaxi.debug.xcconfig"; path = "Target Support Files/Pods-YTaxi/Pods-YTaxi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -46,6 +57,9 @@
 		C08EB182252B7AB10045A07A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C08EB184252B81080045A07A /* UserCredential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredential.swift; sourceTree = "<group>"; };
 		C08EB186252BADFF0045A07A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		C08EB18C252C9C920045A07A /* YTaxiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YTaxiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C08EB18E252C9C920045A07A /* YTaxiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTaxiTests.swift; sourceTree = "<group>"; };
+		C08EB190252C9C920045A07A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF48A969AC62BD5CBA2FAA6B /* Pods_YTaxi.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C08EB189252C9C920045A07A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				C08EB157252B49730045A07A /* YTaxi */,
+				C08EB18D252C9C920045A07A /* YTaxiTests */,
 				C08EB156252B49730045A07A /* Products */,
 				50C328FE9537FD86D4820BC7 /* Pods */,
 				0889713395381F465C628416 /* Frameworks */,
@@ -91,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				C08EB155252B49730045A07A /* YTaxi.app */,
+				C08EB18C252C9C920045A07A /* YTaxiTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,6 +189,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		C08EB18D252C9C920045A07A /* YTaxiTests */ = {
+			isa = PBXGroup;
+			children = (
+				C08EB18E252C9C920045A07A /* YTaxiTests.swift */,
+				C08EB190252C9C920045A07A /* Info.plist */,
+			);
+			path = YTaxiTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -188,6 +220,24 @@
 			productReference = C08EB155252B49730045A07A /* YTaxi.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C08EB18B252C9C920045A07A /* YTaxiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C08EB195252C9C920045A07A /* Build configuration list for PBXNativeTarget "YTaxiTests" */;
+			buildPhases = (
+				C08EB188252C9C920045A07A /* Sources */,
+				C08EB189252C9C920045A07A /* Frameworks */,
+				C08EB18A252C9C920045A07A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C08EB192252C9C920045A07A /* PBXTargetDependency */,
+			);
+			name = YTaxiTests;
+			productName = YTaxiTests;
+			productReference = C08EB18C252C9C920045A07A /* YTaxiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,6 +250,10 @@
 				TargetAttributes = {
 					C08EB154252B49730045A07A = {
 						CreatedOnToolsVersion = 11.6;
+					};
+					C08EB18B252C9C920045A07A = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = C08EB154252B49730045A07A;
 					};
 				};
 			};
@@ -217,6 +271,7 @@
 			projectRoot = "";
 			targets = (
 				C08EB154252B49730045A07A /* YTaxi */,
+				C08EB18B252C9C920045A07A /* YTaxiTests */,
 			);
 		};
 /* End PBXProject section */
@@ -229,6 +284,13 @@
 				C08EB165252B49760045A07A /* LaunchScreen.storyboard in Resources */,
 				C08EB162252B49760045A07A /* Assets.xcassets in Resources */,
 				C08EB17F252B5B940045A07A /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C08EB18A252C9C920045A07A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +358,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C08EB188252C9C920045A07A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C08EB18F252C9C920045A07A /* YTaxiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C08EB192252C9C920045A07A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C08EB154252B49730045A07A /* YTaxi */;
+			targetProxy = C08EB191252C9C920045A07A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C08EB163252B49760045A07A /* LaunchScreen.storyboard */ = {
@@ -462,6 +540,46 @@
 			};
 			name = Release;
 		};
+		C08EB193252C9C920045A07A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZNY957A2G6;
+				INFOPLIST_FILE = YTaxiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.abdulCo.YTaxiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YTaxi.app/YTaxi";
+			};
+			name = Debug;
+		};
+		C08EB194252C9C920045A07A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZNY957A2G6;
+				INFOPLIST_FILE = YTaxiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.abdulCo.YTaxiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YTaxi.app/YTaxi";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -479,6 +597,15 @@
 			buildConfigurations = (
 				C08EB16A252B49760045A07A /* Debug */,
 				C08EB16B252B49760045A07A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C08EB195252C9C920045A07A /* Build configuration list for PBXNativeTarget "YTaxiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C08EB193252C9C920045A07A /* Debug */,
+				C08EB194252C9C920045A07A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -48,12 +48,16 @@ PODS:
     - nanopb/encode (= 1.30906.0)
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
+  - Nimble (8.1.2)
   - PromisesObjC (1.2.10)
+  - Quick (3.0.0)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
+  - Nimble
+  - Quick
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
@@ -68,7 +72,9 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - Nimble
     - PromisesObjC
+    - Quick
     - SnapKit
 
 SPEC CHECKSUMS:
@@ -82,9 +88,11 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
+  Nimble: 3864815b4703c7ebffba875973c70e854489fbae
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
+  Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 6cff8befa9a77d618b2fb266e9979c1d7139f875
+PODFILE CHECKSUM: 288c3efe2e1c27873a5ecbec9f117b51f6bf9589
 
 COCOAPODS: 1.8.4
