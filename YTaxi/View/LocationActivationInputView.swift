@@ -20,12 +20,13 @@ class LocationActivationInputView : UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .darkGray
-        label.text = "WAhere to?"
+        label.text = "Where to?"
         return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .white
         configuration()
     }
     
@@ -42,7 +43,7 @@ class LocationActivationInputView : UIView {
         }
         addSubview(placeholderLabel)
         placeholderLabel.snp.makeConstraints { make in
-            make.leading.equalTo(blackIndicatorSquare.snp.right).inset(8)
+            make.left.equalTo(blackIndicatorSquare.snp.right).inset(-20)
             make.centerY.equalToSuperview()
         }
     }

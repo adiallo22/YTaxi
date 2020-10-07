@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import MapKit
+import SnapKit
 
 class Home : UIViewController {
     
@@ -16,7 +17,9 @@ class Home : UIViewController {
     
     private let locationManager = CLLocationManager()
     
-    private let log = LoginService()
+    private let login = LoginService()
+    
+    private var inputActivationView = LocationActivationInputView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,13 @@ extension Home {
     fileprivate func configureUI() {
         navigationController?.navigationBar.isHidden = true
         configureMapView()
+        view.addSubview(inputActivationView)
+        inputActivationView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(50)
+            make.centerX.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(50)
+        }
     }
     
     fileprivate func configureMapView() {
@@ -61,7 +71,7 @@ extension Home {
 
 extension Home {
     fileprivate func signout() {
-        log.logout { error in
+        login.logout { error in
             if let error = error {
                 print(error.localizedDescription)
             }
