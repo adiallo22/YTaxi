@@ -25,26 +25,16 @@ class LocationInputView : UIView {
     }()
     
     private lazy var currentLocationTextField : UITextField = {
-        let tf = UITextField()
-        let frontPadding = UIView()
-        tf.leftView = frontPadding
-        tf.leftViewMode = .always
-        frontPadding.snp.makeConstraints { make in
-            make.width.equalTo(20)
-            make.height.equalTo(8)
-        }
-        tf.placeholder = "Current Location"
-        tf.backgroundColor = .groupTableViewBackground
-        tf.font = UIFont.systemFont(ofSize: 14)
-        tf.isEnabled = false
+        let tf = UITextField().customTextfield(backgroundColor: .systemGroupedBackground,
+                                               placeholder: "Current Location",
+                                               enable: false)
         return tf
     }()
     
     private let destinationTextField : UITextField = {
-        let tf = UITextField()
-        tf.font = UIFont.systemFont(ofSize: 14)
-        tf.placeholder = "Enter Destination .."
-        tf.backgroundColor = .lightGray
+        let tf = UITextField().customTextfield(backgroundColor: .lightGray,
+                                               placeholder: "Enter Location",
+                                               enable: true)
         return tf
     }()
     
