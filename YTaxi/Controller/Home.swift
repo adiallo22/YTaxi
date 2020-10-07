@@ -93,16 +93,13 @@ extension Home : CLLocationManagerDelegate {
         locationManager.delegate = self
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
-            print("not determined")
             locationManager.requestWhenInUseAuthorization()
         case .restricted, .denied:
             break
         case .authorizedAlways:
-            print("always authorized")
             locationManager.startUpdatingLocation()
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
         case .authorizedWhenInUse:
-            print("when in use")
             CLLocationManager().requestAlwaysAuthorization()
         @unknown default:
             break

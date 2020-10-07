@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol LocationActivationInputViewDelegate : class {
+    func presentInputView()
+}
+
 class LocationActivationInputView : UIView {
+    
+    weak var delegate : LocationActivationInputViewDelegate?
     
     private let blackIndicatorSquare : UIView = {
         let view = UIView()
@@ -41,11 +47,16 @@ class LocationActivationInputView : UIView {
             make.leading.equalToSuperview().inset(16)
             make.width.height.equalTo(6)
         }
+        //
         addSubview(placeholderLabel)
         placeholderLabel.snp.makeConstraints { make in
             make.left.equalTo(blackIndicatorSquare.snp.right).inset(-20)
             make.centerY.equalToSuperview()
         }
+        //
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(handleShowInputView))
+        addGestureRecognizer(tap)
+        //
         addShadow()
     }
     
@@ -56,4 +67,12 @@ class LocationActivationInputView : UIView {
         layer.shadowOpacity = 0.45
     }
     
+}
+
+//MARK: - selectors
+
+extension LocationActivationInputView {
+    @objc func handleShowInputView() {
+        delegate?.presentInputView()
+    }
 }
