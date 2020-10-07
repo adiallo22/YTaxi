@@ -14,6 +14,8 @@ protocol LocationInputViewDelegate : class {
 
 class LocationInputView : UIView {
     
+    //MARK: - properties
+    
     weak var delegate : LocationInputViewDelegate?
     
     private let usernameLabel : UILabel = {
@@ -22,6 +24,24 @@ class LocationInputView : UIView {
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .darkGray
         return label
+    }()
+    
+    private var startBackSquare : UIView = {
+        let view = UIView()
+        view.backgroundColor = .darkGray
+        return view
+    }()
+    
+    private var destinationBackSquare : UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        return view
+    }()
+    
+    private var linkingLineView : UIView = {
+        let view = UIView()
+        view.backgroundColor = .darkGray
+        return view
     }()
     
     private lazy var currentLocationTextField : UITextField = {
@@ -44,6 +64,8 @@ class LocationInputView : UIView {
         button.addTarget(self, action: #selector(handleDismissal), for: .touchUpInside)
         return button
     }()
+    
+    //MARK: - initialisers
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -83,12 +105,37 @@ extension LocationInputView {
             make.trailing.equalToSuperview().inset(40)
             make.height.equalTo(30)
         }
+        //
         addSubview(destinationTextField)
         destinationTextField.snp.makeConstraints { make in
             make.top.equalTo(currentLocationTextField.snp.bottom).inset(-10)
             make.leading.equalTo(backButton.snp.trailing).inset(-8)
             make.trailing.equalToSuperview().inset(40)
             make.height.equalTo(30)
+        }
+        //
+        addSubview(startBackSquare)
+        startBackSquare.snp.makeConstraints { make in
+            make.centerY.equalTo(currentLocationTextField)
+            make.centerX.equalTo(backButton)
+            make.height.width.equalTo(6)
+        }
+        startBackSquare.clipsToBounds = true
+        startBackSquare.layer.cornerRadius = 3
+        //
+        addSubview(destinationBackSquare)
+        destinationBackSquare.snp.makeConstraints { make in
+            make.centerY.equalTo(destinationTextField)
+            make.centerX.equalTo(backButton)
+            make.height.width.equalTo(10)
+        }
+        //
+        addSubview(linkingLineView)
+        linkingLineView.snp.makeConstraints { make in
+            make.width.equalTo(0.75)
+            make.top.equalTo(startBackSquare.snp.bottom).inset(-4)
+            make.bottom.equalTo(destinationBackSquare.snp.top).inset(-4)
+            make.centerX.equalTo(startBackSquare)
         }
     }
     
