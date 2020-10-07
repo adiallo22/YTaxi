@@ -55,5 +55,12 @@ extension UIView {
         return view
     }
     
+    func addShadow() {
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize.init(width: 0.5, height: 0.5)
+        layer.shadowOpacity = 0.45
+    }
+    
 }
 

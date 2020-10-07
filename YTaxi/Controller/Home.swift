@@ -19,11 +19,12 @@ class Home : UIViewController {
     
     private let login = LoginService()
     
-    private var inputActivationView = LocationActivationInputView()
+    private let inputActivationView = LocationActivationInputView()
+    
+    private let locationInputView = LocationInputView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        signout()
         inputActivationView.delegate = self
         checkUserLogStatus()
         enableLocationService()
@@ -39,13 +40,13 @@ extension Home {
         navigationController?.navigationBar.isHidden = true
         configureMapView()
         view.addSubview(inputActivationView)
-        inputActivationView.alpha = 0
         inputActivationView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(50)
             make.centerX.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(50)
         }
+        inputActivationView.alpha = 0
         UIView.animate(withDuration: 2.0) {
             self.inputActivationView.alpha = 1
         }
@@ -68,6 +69,20 @@ extension Home {
             return
         }
         configureUI()
+    }
+    
+    fileprivate func presentLocationInputView() {
+        view.addSubview(locationInputView)
+        locationInputView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+            make.height.equalToSuperview().multipliedBy(0.3)
+        }
+        locationInputView.alpha = 0
+        UIView.animate(withDuration: 0.5, animations: {
+            self.locationInputView.alpha = 1.0
+        }) { _ in
+            //present tableview here..
+        }
     }
     
 }
@@ -118,7 +133,8 @@ extension Home : CLLocationManagerDelegate {
 extension Home : LocationActivationInputViewDelegate {
     
     func presentInputView() {
-        print("present input view")
+        inputActivationView.alpha = 0
+        presentLocationInputView()
     }
     
 }

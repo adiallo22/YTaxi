@@ -56,15 +56,7 @@ class LocationActivationInputView : UIView {
         //
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(handleShowInputView))
         addGestureRecognizer(tap)
-        //
         addShadow()
-    }
-    
-    fileprivate func addShadow() {
-        layer.masksToBounds = false
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize.init(width: 0.5, height: 0.5)
-        layer.shadowOpacity = 0.45
     }
     
 }
