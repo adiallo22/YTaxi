@@ -99,6 +99,7 @@ extension Home {
         tableView.dataSource = self
         tableView.estimatedRowHeight = 40
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.tableFooterView = UIView()
         tableView.backgroundColor = .customWhiteForDarkMode()
         tableView.register(LocationCell.self, forCellReuseIdentifier: reuseIdentifier)
         //
@@ -187,12 +188,20 @@ extension Home : LocationInputViewDelegate {
 
 extension Home : UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? "Saved" : "Result"
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("")
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return section == 0 ? 1 : 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
