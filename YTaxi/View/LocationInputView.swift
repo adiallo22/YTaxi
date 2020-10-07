@@ -16,6 +16,38 @@ class LocationInputView : UIView {
     
     weak var delegate : LocationInputViewDelegate?
     
+    private let usernameLabel : UILabel = {
+        let label = UILabel()
+        label.text = "Abdul Diallo"
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = .darkGray
+        return label
+    }()
+    
+    private lazy var currentLocationTextField : UITextField = {
+        let tf = UITextField()
+        let frontPadding = UIView()
+        tf.leftView = frontPadding
+        tf.leftViewMode = .always
+        frontPadding.snp.makeConstraints { make in
+            make.width.equalTo(20)
+            make.height.equalTo(8)
+        }
+        tf.placeholder = "Current Location"
+        tf.backgroundColor = .groupTableViewBackground
+        tf.font = UIFont.systemFont(ofSize: 14)
+        tf.isEnabled = false
+        return tf
+    }()
+    
+    private let destinationTextField : UITextField = {
+        let tf = UITextField()
+        tf.font = UIFont.systemFont(ofSize: 14)
+        tf.placeholder = "Enter Destination .."
+        tf.backgroundColor = .lightGray
+        return tf
+    }()
+    
     private let backButton : UIButton = {
         let button = UIButton()
         button.setImage(#imageLiteral(resourceName: "baseline_arrow_back_black_36dp").withRenderingMode(.alwaysOriginal), for: .normal)
@@ -46,6 +78,27 @@ extension LocationInputView {
             make.height.width.equalTo(24)
             make.leading.equalToSuperview().inset(8)
             make.top.equalToSuperview().inset(40)
+        }
+        //
+        addSubview(usernameLabel)
+        usernameLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(backButton)
+            make.centerX.equalToSuperview()
+        }
+        //
+        addSubview(currentLocationTextField)
+        currentLocationTextField.snp.makeConstraints { make in
+            make.top.equalTo(backButton.snp.bottom).inset(-8)
+            make.leading.equalTo(backButton.snp.trailing).inset(-8)
+            make.trailing.equalToSuperview().inset(40)
+            make.height.equalTo(30)
+        }
+        addSubview(destinationTextField)
+        destinationTextField.snp.makeConstraints { make in
+            make.top.equalTo(currentLocationTextField.snp.bottom).inset(-10)
+            make.leading.equalTo(backButton.snp.trailing).inset(-8)
+            make.trailing.equalToSuperview().inset(40)
+            make.height.equalTo(30)
         }
     }
     

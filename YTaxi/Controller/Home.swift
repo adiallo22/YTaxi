@@ -76,7 +76,7 @@ extension Home {
         view.addSubview(locationInputView)
         locationInputView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
-            make.height.equalToSuperview().multipliedBy(0.3)
+            make.height.equalToSuperview().multipliedBy(0.2)
         }
         locationInputView.alpha = 0
         UIView.animate(withDuration: 0.5, animations: {
