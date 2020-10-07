@@ -29,6 +29,7 @@
 		C08EB19F252CC9110045A07A /* AuthSignupTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB19E252CC9110045A07A /* AuthSignupTest.swift */; };
 		C08EB1A2252DF21E0045A07A /* LocationActivationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB1A1252DF21E0045A07A /* LocationActivationInputView.swift */; };
 		C08EB1A4252E01AD0045A07A /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB1A3252E01AD0045A07A /* LocationInputView.swift */; };
+		C08EB1A6252E2C240045A07A /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB1A5252E2C240045A07A /* LocationCell.swift */; };
 		EF48A969AC62BD5CBA2FAA6B /* Pods_YTaxi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5231D0B9C655BC6375DAAF1 /* Pods_YTaxi.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		C08EB19E252CC9110045A07A /* AuthSignupTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignupTest.swift; sourceTree = "<group>"; };
 		C08EB1A1252DF21E0045A07A /* LocationActivationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationActivationInputView.swift; sourceTree = "<group>"; };
 		C08EB1A3252E01AD0045A07A /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
+		C08EB1A5252E2C240045A07A /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			children = (
 				C08EB1A1252DF21E0045A07A /* LocationActivationInputView.swift */,
 				C08EB1A3252E01AD0045A07A /* LocationInputView.swift */,
+				C08EB1A5252E2C240045A07A /* LocationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				C08EB181252B77600045A07A /* AuthenticationService.swift in Sources */,
 				C08EB173252B51A00045A07A /* Login.swift in Sources */,
 				C08EB175252B52F10045A07A /* Signup.swift in Sources */,
+				C08EB1A6252E2C240045A07A /* LocationCell.swift in Sources */,
 				C08EB1A4252E01AD0045A07A /* LocationInputView.swift in Sources */,
 				C08EB159252B49730045A07A /* AppDelegate.swift in Sources */,
 				C08EB1A2252DF21E0045A07A /* LocationActivationInputView.swift in Sources */,

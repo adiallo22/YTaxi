@@ -11,6 +11,8 @@ import Firebase
 import MapKit
 import SnapKit
 
+private let reuseIdentifier = "LocationCell"
+
 class Home : UIViewController {
     
     private var mapView = MKMapView()
@@ -22,6 +24,8 @@ class Home : UIViewController {
     private let inputActivationView = LocationActivationInputView()
     
     private let locationInputView = LocationInputView()
+    
+    private let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +77,7 @@ extension Home {
     }
     
     fileprivate func presentLocationInputView() {
+        configureTableView()
         view.addSubview(locationInputView)
         locationInputView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
@@ -83,7 +88,23 @@ extension Home {
             self.locationInputView.alpha = 1.0
         }) { _ in
             //present tableview here..
+            UIView.animate(withDuration: 0.5) {
+                self.tableView.frame.origin.y = self.locationInputView.frame.height
+            }
         }
+    }
+    
+    fileprivate func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = .customWhiteForDarkMode()
+        tableView.register(LocationCell.self, forCellReuseIdentifier: reuseIdentifier)
+        //
+        view.addSubview(tableView)
+        tableView.frame = CGRect.init(x: 0,
+                                      y: view.frame.height,
+                                      width: view.frame.width,
+                                      height: view.frame.height * 0.80)
     }
     
 }
@@ -145,10 +166,37 @@ extension Home : LocationActivationInputViewDelegate {
 extension Home : LocationInputViewDelegate {
     
     func handleDismiss(_ view: LocationInputView) {
-        UIView.animate(withDuration: 0.75) {
-            view.removeFromSuperview()
-            self.inputActivationView.alpha = 1.0
+        UIView.animate(withDuration: 0.50, animations: {
+            self.tableView.frame.origin.y = self.view.frame.height
+        }) { _ in
+            UIView.animate(withDuration: 0.75, animations: {
+                view.removeFromSuperview()
+            }) { _ in
+                UIView.animate(withDuration: 0.75) {
+                    self.inputActivationView.alpha = 1.0
+                }
+            }
         }
     }
     
+}
+
+//MARK: - UITableViewDelegate, UITableViewDataSource
+
+extension Home : UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("")
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? LocationCell else {
+            return UITableViewCell()
+        }
+        return cell
+    }
 }
