@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol LocationInputViewDelegate : class {
+    func handleDismiss(_ view : LocationInputView)
+}
+
 class LocationInputView : UIView {
+    
+    weak var delegate : LocationInputViewDelegate?
     
     private let backButton : UIButton = {
         let button = UIButton()
@@ -49,6 +55,6 @@ extension LocationInputView {
 
 extension LocationInputView {
     @objc func handleDismissal() {
-        print("dismiss")
+        delegate?.handleDismiss(self)
     }
 }

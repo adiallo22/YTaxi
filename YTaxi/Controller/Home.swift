@@ -26,6 +26,7 @@ class Home : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         inputActivationView.delegate = self
+        locationInputView.delegate = self
         checkUserLogStatus()
         enableLocationService()
     }
@@ -47,7 +48,7 @@ extension Home {
             make.height.equalTo(50)
         }
         inputActivationView.alpha = 0
-        UIView.animate(withDuration: 2.0) {
+        UIView.animate(withDuration: 1.5) {
             self.inputActivationView.alpha = 1
         }
     }
@@ -135,6 +136,19 @@ extension Home : LocationActivationInputViewDelegate {
     func presentInputView() {
         inputActivationView.alpha = 0
         presentLocationInputView()
+    }
+    
+}
+
+//MARK: - LocationInputViewDelegate
+
+extension Home : LocationInputViewDelegate {
+    
+    func handleDismiss(_ view: LocationInputView) {
+        UIView.animate(withDuration: 0.75) {
+            view.removeFromSuperview()
+            self.inputActivationView.alpha = 1.0
+        }
     }
     
 }
