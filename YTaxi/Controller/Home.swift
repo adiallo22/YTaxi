@@ -33,8 +33,14 @@ extension Home {
     
     fileprivate func configureUI() {
         navigationController?.navigationBar.isHidden = true
+        configureMapView()
+    }
+    
+    fileprivate func configureMapView() {
         view.addSubview(mapView)
         mapView.frame = view.frame
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
     }
     
     fileprivate func presentLoginScreen() {
@@ -65,18 +71,28 @@ extension Home {
 
 //MARK: - Location services
 
-extension Home {
+extension Home : CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.requestAlwaysAuthorization()
+        }
+    }
     
     fileprivate func enableLocationService() {
+        locationManager.delegate = self
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
-            CLLocationManager().requestWhenInUseAuthorization()
+            print("not determined")
+            locationManager.requestWhenInUseAuthorization()
         case .restricted, .denied:
             break
         case .authorizedAlways:
+            print("always authorized")
             locationManager.startUpdatingLocation()
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
         case .authorizedWhenInUse:
+            print("when in use")
             CLLocationManager().requestAlwaysAuthorization()
         @unknown default:
             break
