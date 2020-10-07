@@ -24,6 +24,7 @@ class Home : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        signout()
+        inputActivationView.delegate = self
         checkUserLogStatus()
         enableLocationService()
     }
@@ -38,11 +39,15 @@ extension Home {
         navigationController?.navigationBar.isHidden = true
         configureMapView()
         view.addSubview(inputActivationView)
+        inputActivationView.alpha = 0
         inputActivationView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(50)
             make.centerX.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(50)
+        }
+        UIView.animate(withDuration: 2.0) {
+            self.inputActivationView.alpha = 1
         }
     }
     
@@ -104,6 +109,16 @@ extension Home : CLLocationManagerDelegate {
         @unknown default:
             break
         }
+    }
+    
+}
+
+//MARK: - LocationActivationInputViewDelegate
+
+extension Home : LocationActivationInputViewDelegate {
+    
+    func presentInputView() {
+        print("present input view")
     }
     
 }
