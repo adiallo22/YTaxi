@@ -174,8 +174,7 @@
 		C08EB16E252B510F0045A07A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C08EB172252B51A00045A07A /* Login.swift */,
-				C08EB174252B52F10045A07A /* Signup.swift */,
+				C08EB1A0252DE17E0045A07A /* Authentication */,
 				C08EB186252BADFF0045A07A /* Home.swift */,
 			);
 			path = Controller;
@@ -223,6 +222,15 @@
 				C08EB19C252CAC2B0045A07A /* SignupServiceMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		C08EB1A0252DE17E0045A07A /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				C08EB172252B51A00045A07A /* Login.swift */,
+				C08EB174252B52F10045A07A /* Signup.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

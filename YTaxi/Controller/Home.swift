@@ -14,12 +14,15 @@ class Home : UIViewController {
     
     private var mapView = MKMapView()
     
+    private let locationManager = CLLocationManager()
+    
     private let log = LoginService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        signout()
+//        signout()
         checkUserLogStatus()
+        enableLocationService()
     }
     
 }
@@ -58,4 +61,26 @@ extension Home {
             }
         }
     }
+}
+
+//MARK: - Location services
+
+extension Home {
+    
+    fileprivate func enableLocationService() {
+        switch CLLocationManager.authorizationStatus() {
+        case .notDetermined:
+            CLLocationManager().requestWhenInUseAuthorization()
+        case .restricted, .denied:
+            break
+        case .authorizedAlways:
+            locationManager.startUpdatingLocation()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        case .authorizedWhenInUse:
+            CLLocationManager().requestAlwaysAuthorization()
+        @unknown default:
+            break
+        }
+    }
+    
 }
