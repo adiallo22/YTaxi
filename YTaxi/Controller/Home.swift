@@ -97,6 +97,8 @@ extension Home {
     fileprivate func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.estimatedRowHeight = 40
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.backgroundColor = .customWhiteForDarkMode()
         tableView.register(LocationCell.self, forCellReuseIdentifier: reuseIdentifier)
         //
