@@ -128,10 +128,11 @@ extension Home {
     }
     
     fileprivate func fetchUserData() {
-        service.fetchUserData { result in
+        service.fetchUserData { [weak self] result in
             switch result {
-            case .success(let fullname):
-                print("user fullname is : \(fullname)")
+            case .success(let dictionaryData):
+                let viewModel = UserDataViewModel(dictionaryData: dictionaryData)
+                self?.locationInputView.usernameLabel.text = viewModel.fullname
             case .failure(let error):
                 print("ERROR - \(error.description)")
             }

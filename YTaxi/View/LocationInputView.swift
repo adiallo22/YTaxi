@@ -16,11 +16,10 @@ class LocationInputView : UIView {
     
     //MARK: - properties
     
-    weak var delegate : LocationInputViewDelegate?
+    var delegate : LocationInputViewDelegate?
     
-    private let usernameLabel : UILabel = {
+    let usernameLabel : UILabel = {
         let label = UILabel()
-        label.text = "Abdul Diallo"
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .darkGray
         return label

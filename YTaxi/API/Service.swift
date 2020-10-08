@@ -13,18 +13,14 @@ struct Service {
     
     let userReference = Database.database().reference().child("users")
     
-    func fetchUserData(completion : @escaping(Result<String, APIError>) -> Void) {
+    func fetchUserData(completion : @escaping(Result<[String:Any], APIError>) -> Void) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         userReference.child(uid).observeSingleEvent(of: .value) { snapshot in
             guard let dictionary = snapshot.value as? [String:Any] else {
                 completion(.failure(.downcasting(val: "dictionary")))
                 return
             }
-            guard let fullname = dictionary[UserCredentialEnum.fullname.rawValue] as? String else {
-                completion(.failure(.downcasting(val: UserCredentialEnum.fullname.rawValue)))
-                return
-            }
-            completion(.success(fullname))
+            completion(.success(dictionary))
         }
     }
     
