@@ -10,17 +10,14 @@ import Foundation
 
 struct UserDataViewModel {
     
-    private let dictionaryData : [String:Any]
+    private let user : UserCredential
     
     var fullname : String {
-        if let fn = dictionaryData[UserCredentialEnum.fullname.rawValue] as? String {
-            return fn
-        }
-        return "No User Retreived"
+        return user.fullname
     }
     
-    init(dictionaryData: [String:Any]) {
-        self.dictionaryData = dictionaryData
+    init(user: UserCredential) {
+        self.user = user
     }
     
 }

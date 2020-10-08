@@ -31,9 +31,10 @@ class Home : UIViewController {
     
     private var service = Service()
     
-    private var dictionaryData : [String:Any] = [:] {
+    private var user : UserCredential? {
         didSet {
-            let viewModel = UserDataViewModel(dictionaryData: dictionaryData)
+            guard let user = user else { return }
+            let viewModel = UserDataViewModel(user: user)
             locationInputView.usernameLabel.text = viewModel.fullname
         }
     }
@@ -141,8 +142,8 @@ extension Home {
     fileprivate func fetchUserData() {
         service.fetchUserData { [weak self] result in
             switch result {
-            case .success(let dictionaryData):
-                self?.dictionaryData = dictionaryData
+            case .success(let user):
+                self?.user = user
             case .failure(let error):
                 print("ERROR - \(error.description)")
             }
