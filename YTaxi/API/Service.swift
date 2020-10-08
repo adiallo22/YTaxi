@@ -16,7 +16,9 @@ struct Service {
     func fetchUserData() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         userReference.child(uid).observeSingleEvent(of: .value) { snapshot in
-            print(snapshot.value)
+            guard let dictionary = snapshot.value as? [String:Any] else { return }
+            guard let fullname = dictionary["fullname"] as? String else { return }
+            
         }
     }
     
