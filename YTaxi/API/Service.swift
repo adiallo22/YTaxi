@@ -9,9 +9,13 @@
 import FirebaseDatabase
 import FirebaseAuth
 
-struct Service {
-    
-    let userReference = Database.database().reference().child("users")
+let userReference = Database.database().reference().child("users")
+
+protocol ServiceProtocol {
+    func fetchUserData(completion : @escaping(Result<UserCredential, APIError>) -> Void)
+}
+
+struct Service : ServiceProtocol {
     
     func fetchUserData(completion : @escaping(Result<UserCredential, APIError>) -> Void) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
