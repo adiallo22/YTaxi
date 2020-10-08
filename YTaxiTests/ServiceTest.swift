@@ -32,6 +32,8 @@ class ServiceTest : QuickSpec {
                         expect(user.fullname).to(equal("mockfullname"))
                         expect(user.email).to(equal("mockemail"))
                         expect(user.userType).to(equal(0))
+                        expect(serviceMock.fetchUserDataCalled).to(equal(true))
+                        expect(serviceMock.shouldReturnError).to(equal(false))
                     case .failure(_):
                         print("")
                     }
@@ -47,6 +49,8 @@ class ServiceTest : QuickSpec {
                             print("")
                         case .failure(let error):
                             expect(error.description).to(equal(APIError.downServer.description))
+                            expect(serviceMock.fetchUserDataCalled).to(equal(true))
+                            expect(serviceMock.shouldReturnError).to(equal(true))
                         }
                     }
                 }
