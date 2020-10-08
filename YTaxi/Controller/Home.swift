@@ -128,7 +128,14 @@ extension Home {
     }
     
     fileprivate func fetchUserData() {
-        service.fetchUserData()
+        service.fetchUserData { result in
+            switch result {
+            case .success(let fullname):
+                print("user fullname is : \(fullname)")
+            case .failure(let error):
+                print("ERROR - \(error.description)")
+            }
+        }
     }
     
 }
