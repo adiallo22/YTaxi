@@ -15,6 +15,8 @@ private let reuseIdentifier = "LocationCell"
 
 class Home : UIViewController {
     
+    //MARK: - properties
+    
     private var mapView = MKMapView()
     
     private let locationManager = CLLocationManager()
@@ -28,6 +30,15 @@ class Home : UIViewController {
     private let tableView = UITableView()
     
     private var service = Service()
+    
+    private var dictionaryData : [String:Any] = [:] {
+        didSet {
+            let viewModel = UserDataViewModel(dictionaryData: dictionaryData)
+            locationInputView.usernameLabel.text = viewModel.fullname
+        }
+    }
+    
+    //MARK: - initializers
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,8 +142,7 @@ extension Home {
         service.fetchUserData { [weak self] result in
             switch result {
             case .success(let dictionaryData):
-                let viewModel = UserDataViewModel(dictionaryData: dictionaryData)
-                self?.locationInputView.usernameLabel.text = viewModel.fullname
+                self?.dictionaryData = dictionaryData
             case .failure(let error):
                 print("ERROR - \(error.description)")
             }
