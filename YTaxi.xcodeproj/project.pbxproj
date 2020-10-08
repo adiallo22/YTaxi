@@ -12,6 +12,7 @@
 		C031773B252F44930046C68E /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C031773A252F44930046C68E /* APIError.swift */; };
 		C031773D252F48C90046C68E /* UserDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C031773C252F48C90046C68E /* UserDataViewModel.swift */; };
 		C031773F252F57590046C68E /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C031773E252F57590046C68E /* ServiceMock.swift */; };
+		C0317741252F58C80046C68E /* ServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0317740252F58C80046C68E /* ServiceTest.swift */; };
 		C08EB159252B49730045A07A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB158252B49730045A07A /* AppDelegate.swift */; };
 		C08EB15B252B49730045A07A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB15A252B49730045A07A /* SceneDelegate.swift */; };
 		C08EB162252B49760045A07A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08EB161252B49760045A07A /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		C031773A252F44930046C68E /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		C031773C252F48C90046C68E /* UserDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataViewModel.swift; sourceTree = "<group>"; };
 		C031773E252F57590046C68E /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
+		C0317740252F58C80046C68E /* ServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTest.swift; sourceTree = "<group>"; };
 		C08EB155252B49730045A07A /* YTaxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YTaxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08EB158252B49730045A07A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C08EB15A252B49730045A07A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			children = (
 				C08EB199252CA64E0045A07A /* Mocks */,
 				C08EB197252CA5000045A07A /* AuthLoginTest.swift */,
+				C0317740252F58C80046C68E /* ServiceTest.swift */,
 				C08EB19E252CC9110045A07A /* AuthSignupTest.swift */,
 				C08EB196252CA5000045A07A /* YTaxiTests-Bridging-Header.h */,
 				C08EB190252C9C920045A07A /* Info.plist */,
@@ -471,6 +474,7 @@
 				C08EB198252CA5000045A07A /* AuthLoginTest.swift in Sources */,
 				C08EB19B252CA7440045A07A /* LoginServiceMock.swift in Sources */,
 				C08EB19F252CC9110045A07A /* AuthSignupTest.swift in Sources */,
+				C0317741252F58C80046C68E /* ServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
