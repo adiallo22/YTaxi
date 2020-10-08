@@ -27,12 +27,15 @@ class Home : UIViewController {
     
     private let tableView = UITableView()
     
+    private var service = Service()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         inputActivationView.delegate = self
         locationInputView.delegate = self
         checkUserLogStatus()
         enableLocationService()
+        fetchUserData()
     }
     
 }
@@ -115,6 +118,7 @@ extension Home {
 //MARK: - API
 
 extension Home {
+    
     fileprivate func signout() {
         login.logout { error in
             if let error = error {
@@ -122,6 +126,11 @@ extension Home {
             }
         }
     }
+    
+    fileprivate func fetchUserData() {
+        service.fetchUserData()
+    }
+    
 }
 
 //MARK: - Location services
