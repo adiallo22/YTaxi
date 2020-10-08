@@ -27,3 +27,11 @@ struct UserCredential {
     }
     
 }
+
+//MARK: - <#section heading#>
+
+enum UserCredentialEnum : String {
+    case fullname
+    case email
+    case userType
+}

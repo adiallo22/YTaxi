@@ -20,8 +20,8 @@ struct Service {
                 completion(.failure(.downcasting(val: "dictionary")))
                 return
             }
-            guard let fullname = dictionary["fullname"] as? String else {
-                completion(.failure(.downcasting(val: "fullname")))
+            guard let fullname = dictionary[UserCredentialEnum.fullname.rawValue] as? String else {
+                completion(.failure(.downcasting(val: UserCredentialEnum.fullname.rawValue)))
                 return
             }
             completion(.success(fullname))

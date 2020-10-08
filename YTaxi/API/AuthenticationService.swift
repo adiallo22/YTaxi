@@ -54,9 +54,9 @@ struct SignupService : SignupDelegate {
                 //save user to db here ..
                 guard let uid = uid else { return }
                 let value = [
-                    "email" : credentials.email,
-                    "fullname" : credentials.fullname,
-                    "userType" : credentials.userType
+                    UserCredentialEnum.email.rawValue : credentials.email,
+                    UserCredentialEnum.fullname.rawValue : credentials.fullname,
+                    UserCredentialEnum.userType.rawValue : credentials.userType
                 ] as [String:Any]
                 Database.database().reference().child("users").child(uid).updateChildValues(value) { error, reference in
                     if let error = error {
