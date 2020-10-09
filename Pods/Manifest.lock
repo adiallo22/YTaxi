@@ -24,6 +24,8 @@ PODS:
   - FirebaseDatabase (6.5.0):
     - FirebaseCore (~> 6.10)
     - leveldb-library (~> 1.22)
+  - GeoFire (4.0.1):
+    - Firebase/Database (~> 6.0)
   - GoogleDataTransport (7.3.0):
     - nanopb (~> 1.30906.0)
   - GoogleUtilities/AppDelegateSwizzler (6.7.2):
@@ -56,6 +58,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
+  - GeoFire
   - Nimble
   - Quick
   - SnapKit (~> 5.0.0)
@@ -67,6 +70,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseDatabase
+    - GeoFire
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
@@ -83,6 +87,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 6fb954e350af0885803d5aa49865d15d9a6b264c
   FirebaseCoreDiagnostics: 7415bfb3883b3500c5a95c42b6ba66baae78f600
   FirebaseDatabase: d85b47213273708e48c972012b39105f76229588
+  GeoFire: 67b5276c561434b4e4c7ea567c2c4d64e711339c
   GoogleDataTransport: e85fb700c9b027079ce182c3d08e12e0f9618bb4
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
@@ -93,6 +98,6 @@ SPEC CHECKSUMS:
   Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: e531f0147fe9d8bc8dc06675b78edad29a4d1770
+PODFILE CHECKSUM: 310d92a21b561960ac3c28579b1da94a5ed80e48
 
 COCOAPODS: 1.8.4

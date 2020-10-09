@@ -13,6 +13,8 @@
 		C031773D252F48C90046C68E /* UserDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C031773C252F48C90046C68E /* UserDataViewModel.swift */; };
 		C031773F252F57590046C68E /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C031773E252F57590046C68E /* ServiceMock.swift */; };
 		C0317741252F58C80046C68E /* ServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0317740252F58C80046C68E /* ServiceTest.swift */; };
+		C031774A252F9A850046C68E /* UserDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0317749252F9A850046C68E /* UserDataViewModel.swift */; };
+		C031774C2530A2710046C68E /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C031774B2530A2710046C68E /* LocationHandler.swift */; };
 		C08EB159252B49730045A07A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB158252B49730045A07A /* AppDelegate.swift */; };
 		C08EB15B252B49730045A07A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EB15A252B49730045A07A /* SceneDelegate.swift */; };
 		C08EB162252B49760045A07A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08EB161252B49760045A07A /* Assets.xcassets */; };
@@ -60,6 +62,8 @@
 		C031773C252F48C90046C68E /* UserDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataViewModel.swift; sourceTree = "<group>"; };
 		C031773E252F57590046C68E /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
 		C0317740252F58C80046C68E /* ServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTest.swift; sourceTree = "<group>"; };
+		C0317749252F9A850046C68E /* UserDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataViewModel.swift; sourceTree = "<group>"; };
+		C031774B2530A2710046C68E /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
 		C08EB155252B49730045A07A /* YTaxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YTaxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08EB158252B49730045A07A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C08EB15A252B49730045A07A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +131,14 @@
 				4FEF1419373F6930CF2B5052 /* Pods-YTaxiTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C0317748252F9A610046C68E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C0317749252F9A850046C68E /* UserDataViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C08EB14C252B49730045A07A = {
@@ -221,6 +233,7 @@
 			children = (
 				C08EB184252B81080045A07A /* UserCredential.swift */,
 				C031773A252F44930046C68E /* APIError.swift */,
+				C031774B2530A2710046C68E /* LocationHandler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -228,6 +241,7 @@
 		C08EB18D252C9C920045A07A /* YTaxiTests */ = {
 			isa = PBXGroup;
 			children = (
+				C0317748252F9A610046C68E /* ViewModel */,
 				C08EB199252CA64E0045A07A /* Mocks */,
 				C08EB197252CA5000045A07A /* AuthLoginTest.swift */,
 				C0317740252F58C80046C68E /* ServiceTest.swift */,
@@ -453,6 +467,7 @@
 				C08EB175252B52F10045A07A /* Signup.swift in Sources */,
 				C08EB1A6252E2C240045A07A /* LocationCell.swift in Sources */,
 				C08EB1A4252E01AD0045A07A /* LocationInputView.swift in Sources */,
+				C031774C2530A2710046C68E /* LocationHandler.swift in Sources */,
 				C08EB159252B49730045A07A /* AppDelegate.swift in Sources */,
 				C0317739252F42670046C68E /* Service.swift in Sources */,
 				C08EB1A2252DF21E0045A07A /* LocationActivationInputView.swift in Sources */,
@@ -469,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C031774A252F9A850046C68E /* UserDataViewModel.swift in Sources */,
 				C08EB19D252CAC2B0045A07A /* SignupServiceMock.swift in Sources */,
 				C031773F252F57590046C68E /* ServiceMock.swift in Sources */,
 				C08EB198252CA5000045A07A /* AuthLoginTest.swift in Sources */,

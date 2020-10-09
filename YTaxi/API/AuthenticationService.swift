@@ -9,6 +9,10 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import GeoFire
+
+let driversLocationRef = Database.database().reference().child("driver_location")
+let userDataRef = Database.database().reference().child("users")
 
 //MARK: - protocols
 
@@ -46,7 +50,8 @@ struct LoginService : LoginDelegate {
 //MARK: - signup
 
 struct SignupService : SignupDelegate {
-    func signup(withCredentials credentials : UserCredential, and password: String, completion : @escaping(Error?)->Void) {
+    func signup(withCredentials credentials : UserCredential, and password: String,
+                completion : @escaping(Error?)->Void) {
         SignupService.createUser(with: credentials.email, and: password) { error, uid  in
             if let error = error {
                 completion(error)
@@ -58,7 +63,19 @@ struct SignupService : SignupDelegate {
                     UserCredentialEnum.fullname.rawValue : credentials.fullname,
                     UserCredentialEnum.userType.rawValue : credentials.userType
                 ] as [String:Any]
-                Database.database().reference().child("users").child(uid).updateChildValues(value) { error, reference in
+                
+//                if credentials.userType == 1 {
+//                    let geofire = GeoFire.init(firebaseRef: driversLocationRef)
+//                    geofire.setLocation(<#T##location: CLLocation##CLLocation#>, forKey: uid) { error in
+//                        if let error = error {
+//                            //handle error here ..
+//                        } else {
+//                            //handle location here ..
+//                        }
+//                    }
+//                }
+                
+                userDataRef.child(uid).updateChildValues(value) { error, reference in
                     if let error = error {
                         completion(error)
                     }

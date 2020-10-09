@@ -13,28 +13,30 @@ import Quick
 class AuthLoginTest : QuickSpec {
     
     override func spec() {
+        
+        var loginServiceMock : LoginServiceMock!
+        var loginService : LoginService!
+        let email = "johndoe@gmail.com"
+        let password = "123456"
+        let fakeEmail = "1@1.com"
+        
+        beforeEach {
+            loginServiceMock = LoginServiceMock(false)
+            loginService = LoginService()
+        }
+        afterEach {
+            loginServiceMock = nil
+            loginService = nil
+        }
+        
         describe("To firebase")  {
-            var loginServiceMock : LoginServiceMock!
-            var loginService : LoginService!
-            let email = "johndoe@gmail.com"
-            let password = "123456"
-            let fakeEmail = "1@1.com"
-            
-            beforeEach {
-                loginServiceMock = LoginServiceMock(false)
-                loginService = LoginService()
-            }
-            afterEach {
-                loginServiceMock = nil
-                loginService = nil
-            }
-            
+        
             describe("when the server is running properly") {
                 context("given the loggin & logout function") {
                     it("should NOT return any error") {
                         loginServiceMock.login(withEmail: "", and: "") { error in
                             expect(error).to(beNil())
-                            expect(loginServiceMock.loginCalled).to(beTrue())
+                            expect(loginServiceMock.loginCalled).to(equal(true))
                         }
                     }
                     it("should NOT return any error") {

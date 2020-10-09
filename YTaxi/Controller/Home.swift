@@ -19,7 +19,9 @@ class Home : UIViewController {
     
     private var mapView = MKMapView()
     
-    private let locationManager = CLLocationManager()
+    private let locationHandler = LocationHandler.shared
+    
+    private lazy var locationManager = locationHandler.locationManager
     
     private let login = LoginService()
     
@@ -33,9 +35,7 @@ class Home : UIViewController {
     
     private var user : UserCredential? {
         didSet {
-            guard let user = user else { return }
-            let viewModel = UserDataViewModel(user: user)
-            locationInputView.usernameLabel.text = viewModel.fullname
+            configureViewModel()
         }
     }
     
@@ -46,7 +46,7 @@ class Home : UIViewController {
         inputActivationView.delegate = self
         locationInputView.delegate = self
         checkUserLogStatus()
-        enableLocationService()
+        locationHandler.enableLocationService()
         fetchUserData()
     }
     
@@ -125,6 +125,12 @@ extension Home {
                                       height: view.frame.height * 0.80)
     }
     
+    fileprivate func configureViewModel() {
+        guard let user = user else { return }
+        let viewModel = UserDataViewModel(user: user)
+        locationInputView.usernameLabel.text = viewModel.fullname
+    }
+    
 }
 
 //MARK: - API
@@ -154,30 +160,9 @@ extension Home {
 
 //MARK: - Location services
 
-extension Home : CLLocationManagerDelegate {
+extension Home {
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
-            locationManager.requestAlwaysAuthorization()
-        }
-    }
     
-    fileprivate func enableLocationService() {
-        locationManager.delegate = self
-        switch CLLocationManager.authorizationStatus() {
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-        case .restricted, .denied:
-            break
-        case .authorizedAlways:
-            locationManager.startUpdatingLocation()
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        case .authorizedWhenInUse:
-            CLLocationManager().requestAlwaysAuthorization()
-        @unknown default:
-            break
-        }
-    }
     
 }
 
