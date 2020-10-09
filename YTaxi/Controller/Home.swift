@@ -138,10 +138,11 @@ extension Home {
 extension Home {
     
     fileprivate func signout() {
-        login.logout { error in
+        login.logout { [weak self] error in
             if let error = error {
                 print(error.localizedDescription)
             }
+            self?.navigationController?.pushViewController(Login(), animated: true)
         }
     }
     
