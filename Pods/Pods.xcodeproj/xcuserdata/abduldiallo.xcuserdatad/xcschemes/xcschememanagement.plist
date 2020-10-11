@@ -4,7 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Firebase.xcscheme</key>
+		<key>Firebase-Auth-CoreOnly-Crashlytics-Database.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Firebase-Auth-CoreOnly-Database.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -24,7 +29,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FirebaseCrashlytics.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FirebaseDatabase.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FirebaseInstallations.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -39,7 +54,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>GoogleUtilities.xcscheme</key>
+		<key>GoogleUtilities-54e75ca4.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GoogleUtilities-df6f21d7.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
