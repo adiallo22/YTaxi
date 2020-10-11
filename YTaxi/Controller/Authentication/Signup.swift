@@ -97,6 +97,8 @@ class Signup : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        let locationManger = LocationHandler.shared.locationManager
+        print(locationManger?.location)
     }
     
 }
