@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		144FC15019920ED8901C3DE3 /* Pods_YTaxiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AA190F0B28943404186BED /* Pods_YTaxiTests.framework */; };
+		C0028CB2253483C3008205A5 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0028CB1253483C3008205A5 /* LocationHandler.swift */; };
 		C0317739252F42670046C68E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0317738252F42670046C68E /* Service.swift */; };
 		C031773B252F44930046C68E /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C031773A252F44930046C68E /* APIError.swift */; };
 		C031773D252F48C90046C68E /* UserDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C031773C252F48C90046C68E /* UserDataViewModel.swift */; };
@@ -55,6 +56,7 @@
 		6620A1919840E315BA998258 /* Pods-YTaxi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTaxi.release.xcconfig"; path = "Target Support Files/Pods-YTaxi/Pods-YTaxi.release.xcconfig"; sourceTree = "<group>"; };
 		A6AE3C43A4C07A7EADC7D559 /* Pods-YTaxiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTaxiTests.debug.xcconfig"; path = "Target Support Files/Pods-YTaxiTests/Pods-YTaxiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B5231D0B9C655BC6375DAAF1 /* Pods_YTaxi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTaxi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0028CB1253483C3008205A5 /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
 		C0317738252F42670046C68E /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		C031773A252F44930046C68E /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		C031773C252F48C90046C68E /* UserDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataViewModel.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			children = (
 				C08EB180252B77600045A07A /* AuthenticationService.swift */,
 				C0317738252F42670046C68E /* Service.swift */,
+				C0028CB1253483C3008205A5 /* LocationHandler.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				C08EB175252B52F10045A07A /* Signup.swift in Sources */,
 				C08EB1A6252E2C240045A07A /* LocationCell.swift in Sources */,
 				C08EB1A4252E01AD0045A07A /* LocationInputView.swift in Sources */,
+				C0028CB2253483C3008205A5 /* LocationHandler.swift in Sources */,
 				C08EB159252B49730045A07A /* AppDelegate.swift in Sources */,
 				C0317739252F42670046C68E /* Service.swift in Sources */,
 				C08EB1A2252DF21E0045A07A /* LocationActivationInputView.swift in Sources */,
