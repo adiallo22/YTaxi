@@ -41,7 +41,6 @@ class Home : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        signout()
         inputActivationView.delegate = self
         locationInputView.delegate = self
         checkUserLogStatus()
