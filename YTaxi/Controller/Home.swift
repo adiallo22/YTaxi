@@ -19,8 +19,6 @@ class Home : UIViewController {
     
     private var mapView = MKMapView()
     
-    private let locationManager = CLLocationManager()
-    
     private let login = LoginService()
     
     private let inputActivationView = LocationActivationInputView()
@@ -131,6 +129,10 @@ extension Home {
 
 extension Home {
     
+    fileprivate func enableLocationService() {
+        LocationHandler.shared.enableLocationService()
+    }
+    
     fileprivate func signout() {
         login.logout { error in
             if let error = error {
@@ -147,35 +149,6 @@ extension Home {
             case .failure(let error):
                 print("ERROR - \(error.description)")
             }
-        }
-    }
-    
-}
-
-//MARK: - Location services
-
-extension Home : CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
-            locationManager.requestAlwaysAuthorization()
-        }
-    }
-    
-    fileprivate func enableLocationService() {
-        locationManager.delegate = self
-        switch CLLocationManager.authorizationStatus() {
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-        case .restricted, .denied:
-            break
-        case .authorizedAlways:
-            locationManager.startUpdatingLocation()
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        case .authorizedWhenInUse:
-            CLLocationManager().requestAlwaysAuthorization()
-        @unknown default:
-            break
         }
     }
     
