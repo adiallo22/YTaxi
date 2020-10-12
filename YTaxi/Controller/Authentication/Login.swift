@@ -138,7 +138,9 @@ extension Login {
     fileprivate func signUserIn(with email : String, and password : String) {
         loginService.login(withEmail: email, and: password) { [weak self] error in
             if error == nil {
-                self?.navigationController?.popViewController(animated: true)
+                DispatchQueue.main.async {
+                    self?.navigationController?.popViewController(animated: true)
+                }
                 guard let home = UIApplication.shared.windows.first?.rootViewController as? Home else { return }
                 home.checkUserLogStatus()
             } else {

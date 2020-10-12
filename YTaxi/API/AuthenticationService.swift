@@ -38,7 +38,9 @@ struct LoginService : LoginDelegate {
         Auth.auth().signIn(withEmail: email, password: password) { auth, error in
             if let error = error {
                 completion(error)
+                return
             }
+            completion(nil)
         }
     }
 }
