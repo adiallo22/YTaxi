@@ -139,6 +139,7 @@ extension Home {
                 print(error.localizedDescription)
             }
         }
+        navigationController?.pushViewController(Login(), animated: true)
     }
     
     fileprivate func fetchUserData() {
