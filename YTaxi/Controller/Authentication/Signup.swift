@@ -14,6 +14,8 @@ class Signup : UIViewController {
     
     private let signupService = SignupService()
     
+    let location = LocationHandler.shared.locationManager.location
+    
     private var titleLabel : UILabel = {
         let label = UILabel()
         label.font = UIFont.init(name: "Avenir-Light", size: 30)
@@ -97,7 +99,6 @@ class Signup : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        print(LocationHandler.shared.locationManager.location)
     }
     
 }
@@ -157,7 +158,6 @@ extension Signup {
                                               email: email,
                                               userType: profileOption.selectedSegmentIndex)
         signup(with: credentials, and: password)
-        navigationController?.popToRootViewController(animated: true)
     }
     
 }
@@ -169,6 +169,8 @@ extension Signup {
         signupService.signup(withCredentials: credentials, and: password) { error in
             if let error = error {
                 print(error.localizedDescription)
+            } else {
+                self.navigationController?.popToRootViewController(animated: true)
             }
         }
     }

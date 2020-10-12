@@ -26,7 +26,9 @@ struct SignupService : SignupDelegate {
                     UserCredentialEnum.fullname.rawValue : credentials.fullname,
                     UserCredentialEnum.userType.rawValue : credentials.userType
                 ] as [String:Any]
-                self.uploadLocation(withUid: uid, userType: credentials.userType) { error in
+                guard let location = LocationHandler.shared.locationManager.location else { return }
+                print(location)
+                self.uploadLocation(withUid: uid, and: credentials.userType, on: location) { error in
                     if let error = error {
                         completion(error)
                     }
@@ -53,10 +55,11 @@ struct SignupService : SignupDelegate {
 }
 
 extension SignupService {
-    fileprivate func uploadLocation(withUid uid : String, userType : Int, completion : @escaping(Error?)->Void) {
+    fileprivate func uploadLocation(withUid uid : String, and userType : Int,
+                                    on location : CLLocation,
+                                    completion : @escaping(Error?)->Void) {
         if userType == 1 {
             let geoFire = GeoFire.init(firebaseRef: driverReference)
-            guard let location = LocationHandler.shared.locationManager.location else { return }
             geoFire.setLocation(location, forKey: uid) { error in
                 if let error = error {
                     completion(error)
