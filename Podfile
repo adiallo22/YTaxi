@@ -14,6 +14,7 @@ target 'YTaxi' do
 	pod 'Firebase/Crashlytics'
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Performance'
+  pod 'GeoFire'
 
 end
 

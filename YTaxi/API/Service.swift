@@ -10,6 +10,7 @@ import FirebaseDatabase
 import FirebaseAuth
 
 let userReference = Database.database().reference().child("users")
+let driverReference = Database.database().reference().child("driver_locations")
 
 protocol ServiceProtocol {
     func fetchUserData(completion : @escaping(Result<UserCredential, APIError>) -> Void)
