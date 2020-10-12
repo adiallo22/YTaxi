@@ -6,7 +6,7 @@
 //  Copyright © 2020 Abdul Diallo. All rights reserved.
 //
 
-import Firebase
+import FirebaseAuth
 import GeoFire
 
 protocol SignupDelegate {

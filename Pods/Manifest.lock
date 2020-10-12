@@ -1,12 +1,7 @@
 PODS:
-  - Firebase/Analytics (6.31.0):
-    - Firebase/Core
   - Firebase/Auth (6.31.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.9.0)
-  - Firebase/Core (6.31.0):
-    - Firebase/CoreOnly
-    - FirebaseAnalytics (= 6.8.0)
   - Firebase/CoreOnly (6.31.0):
     - FirebaseCore (= 6.10.1)
   - Firebase/Crashlytics (6.31.0):
@@ -20,15 +15,6 @@ PODS:
     - FirebasePerformance (~> 3.3.0)
   - FirebaseABTesting (4.2.0):
     - FirebaseCore (~> 6.10)
-  - FirebaseAnalytics (6.8.0):
-    - FirebaseCore (~> 6.10)
-    - FirebaseInstallations (~> 1.6)
-    - GoogleAppMeasurement (= 6.8.0)
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
-    - GoogleUtilities/MethodSwizzler (~> 6.7)
-    - GoogleUtilities/Network (~> 6.7)
-    - "GoogleUtilities/NSData+zlib (~> 6.7)"
-    - nanopb (~> 1.30906.0)
   - FirebaseAuth (6.9.0):
     - FirebaseCore (~> 6.10)
     - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
@@ -77,12 +63,6 @@ PODS:
     - "GoogleUtilities/NSData+zlib (~> 6.7)"
   - GeoFire (4.0.1):
     - Firebase/Database (~> 6.0)
-  - GoogleAppMeasurement (6.8.0):
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
-    - GoogleUtilities/MethodSwizzler (~> 6.7)
-    - GoogleUtilities/Network (~> 6.7)
-    - "GoogleUtilities/NSData+zlib (~> 6.7)"
-    - nanopb (~> 1.30906.0)
   - GoogleDataTransport (7.3.0):
     - nanopb (~> 1.30906.0)
   - GoogleToolboxForMac/Defines (2.2.2)
@@ -124,7 +104,6 @@ PODS:
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
-  - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Crashlytics
   - Firebase/Database
@@ -138,7 +117,6 @@ SPEC REPOS:
   trunk:
     - Firebase
     - FirebaseABTesting
-    - FirebaseAnalytics
     - FirebaseAuth
     - FirebaseCore
     - FirebaseCoreDiagnostics
@@ -148,7 +126,6 @@ SPEC REPOS:
     - FirebasePerformance
     - FirebaseRemoteConfig
     - GeoFire
-    - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleToolboxForMac
     - GoogleUtilities
@@ -164,7 +141,6 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Firebase: 87483fa19acfdf99244523f2389e931927b91457
   FirebaseABTesting: 8a9d8df3acc2b43f4a22014ddf9f601bca6af699
-  FirebaseAnalytics: 0ca9aa2af7cc4dc92392b7a78bfc49feaa2eb60f
   FirebaseAuth: 09f086fae98643f1ef235674cf3ae171ce26f5ba
   FirebaseCore: 6fb954e350af0885803d5aa49865d15d9a6b264c
   FirebaseCoreDiagnostics: 7415bfb3883b3500c5a95c42b6ba66baae78f600
@@ -174,7 +150,6 @@ SPEC CHECKSUMS:
   FirebasePerformance: e325a8ee84a6a3d89c0be049390ed6c1775cce22
   FirebaseRemoteConfig: 35a729305f254fb15a2e541d4b36f3a379da7fdc
   GeoFire: 67b5276c561434b4e4c7ea567c2c4d64e711339c
-  GoogleAppMeasurement: ecc30d0ab5b66d7d18e85ce1b8e2b345db60626d
   GoogleDataTransport: e85fb700c9b027079ce182c3d08e12e0f9618bb4
   GoogleToolboxForMac: 800648f8b3127618c1b59c7f97684427630c5ea3
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
@@ -187,6 +162,6 @@ SPEC CHECKSUMS:
   Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 93231b9d30e2eff80893925729d7258b5c421e16
+PODFILE CHECKSUM: 6b1c68dac1411418777ba4c78f14de20c6c9829b
 
 COCOAPODS: 1.8.4
